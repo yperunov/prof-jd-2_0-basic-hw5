@@ -91,7 +91,49 @@ public class Main {
         System.out.println(Arrays.toString(m1));
 
         // ARRAYS part2
-        // Here will be tasks with Arrays part2
+        //task1
+        int[] m4 = generateRandomArray();
+        int totalMoneyOut = 0;
+
+        for (int i: m4) {
+            totalMoneyOut = totalMoneyOut+i;
+        }
+
+        System.out.println("Сумма трат за месяц составила " + totalMoneyOut+" рублей.");
+
+        //task2
+        int[] m5 = generateRandomArray();
+        int minDayCosts = m5[0];
+        int maxDayCosts = m5[0];
+
+        for (int i : m5) {
+            if (i<minDayCosts){
+                minDayCosts = i;
+            }
+            if (i>maxDayCosts){
+                maxDayCosts = i;
+            }
+        }
+        System.out.println("Минимальная сумма трат за день составила " + minDayCosts +" рублей. Максимальная сумма трат за день составила " + maxDayCosts + " рублей.");
+
+        //task3
+        int[] m6 = generateRandomArray();
+        int totalMoneySpent = 0;
+        int totalDays = m6.length;
+        for (int i : m6) {
+            totalMoneySpent = totalMoneyOut + i;
+        }
+        float averageMoneySpent = totalMoneySpent / (float) totalDays;
+        System.out.println("Средняя сумма трат за месяц составила " + averageMoneySpent + " рублей.");
+
+        //task4
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
+        System.out.println();
+
+
 
         // Saturday Practice with Madjar
 
@@ -133,5 +175,18 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    //intro to ARRAYS part 2
+
+    int[] arr = generateRandomArray();
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
     }
 }
