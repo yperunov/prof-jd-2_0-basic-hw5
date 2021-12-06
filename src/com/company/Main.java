@@ -121,7 +121,7 @@ public class Main {
         int totalMoneySpent = 0;
         int totalDays = m6.length;
         for (int i : m6) {
-            totalMoneySpent = totalMoneyOut + i;
+            totalMoneySpent = totalMoneySpent + i;
         }
         float averageMoneySpent = totalMoneySpent / (float) totalDays;
         System.out.println("Средняя сумма трат за месяц составила " + averageMoneySpent + " рублей.");
